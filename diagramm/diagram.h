@@ -11,8 +11,7 @@
 #define DIAGRAM_H_
 
 #include <SDL/SDL.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL2_gfxPrimitives.h>
+#include <SDL/SDL_gfxPrimitives.h>
 
 #define WIDTH	640
 #define HEIGHT	480

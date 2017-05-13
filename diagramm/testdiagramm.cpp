@@ -8,9 +8,12 @@
 
  */
 
-#include "diagram.h"
+#include "diagram.h"				//Warum führt das Einbinden von diagram.h zu einem Fehler
+									//wenn dort doch genau die gleichen dateien eingebunden werden,
+									//die allein keinen Fehler werfen..
 #include <pthread.h>				//Thread
-
+//#include <SDL2/SDL.h>
+//#include <SDL2/SDL2_gfxPrimitives.h>
 SDL_Surface *screen; //Window-Handler
 
 int main() {
@@ -66,7 +69,11 @@ int main() {
 		while (SDL_PollEvent(&event) ) {
 			switch (event.type) {
 			case SDL_MOUSEBUTTONDOWN: //Mausdruck
+				printf("Maus gedrückt! Super, noch einmal!\n");
 			case SDL_KEYDOWN: //Tastendruck
+				printf("Pfeil nach unten gedrückt! Super, noch einmal!\n");
+			case SDL_KEYUP:
+				printf("Maus gedrückt! Super, noch einmal!\n");
 			case SDL_QUIT: //Quit-Event
 				printf("Verlasse Programm\n");
 				done = 1; //Beenden

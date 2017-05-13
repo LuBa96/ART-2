@@ -40,7 +40,7 @@ endif
 all: mailbox
 
 dependents:
-	-cd /home/mrt/Desktop/Workspace_Echtzeitsimulation/diagramm/Debug && $(MAKE) all
+	-cd /home/mrt/Desktop/Workspace_Echtzeitsimulation/diagramm/Debug && $(MAKE) clean all
 
 # Tool invocations
 mailbox: $(OBJS) $(USER_OBJS) /home/mrt/Desktop/Workspace_Echtzeitsimulation/diagramm/Debug/diagramm
