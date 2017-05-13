@@ -5,3 +5,4 @@
 USER_OBJS :=
 
 LIBS := -lSDL -lSDL_gfx -lrt -lpthread
+

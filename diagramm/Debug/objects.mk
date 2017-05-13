@@ -4,4 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lSDL -lSDL_gfx -lrt -lpthread
+LIBS := -lSDL -lSDL2_gfx -lSDL_gfx -lrt -lpthread
+

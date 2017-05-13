@@ -2,6 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-USER_OBJS := /home/student/Desktop/workspace-MRT2-ART2/diagramm/Debug/diagram.o
+USER_OBJS := 
 
 LIBS := -lSDL -lSDL_gfx -lrt -lpthread
+

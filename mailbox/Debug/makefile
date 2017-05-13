@@ -12,23 +12,23 @@ RM := rm -rf
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
-ifneq ($(strip $(C++_DEPS)),)
--include $(C++_DEPS)
-endif
-ifneq ($(strip $(C_DEPS)),)
--include $(C_DEPS)
-endif
 ifneq ($(strip $(CC_DEPS)),)
 -include $(CC_DEPS)
 endif
-ifneq ($(strip $(CPP_DEPS)),)
--include $(CPP_DEPS)
+ifneq ($(strip $(C++_DEPS)),)
+-include $(C++_DEPS)
+endif
+ifneq ($(strip $(C_UPPER_DEPS)),)
+-include $(C_UPPER_DEPS)
 endif
 ifneq ($(strip $(CXX_DEPS)),)
 -include $(CXX_DEPS)
 endif
-ifneq ($(strip $(C_UPPER_DEPS)),)
--include $(C_UPPER_DEPS)
+ifneq ($(strip $(CPP_DEPS)),)
+-include $(CPP_DEPS)
+endif
+ifneq ($(strip $(C_DEPS)),)
+-include $(C_DEPS)
 endif
 endif
 
@@ -40,23 +40,23 @@ endif
 all: mailbox
 
 dependents:
-	-cd /home/student/Desktop/workspace-MRT2-ART2/diagramm/Debug && $(MAKE) all
+	-cd /home/mrt/Desktop/Workspace_Echtzeitsimulation/diagramm/Debug && $(MAKE) all
 
 # Tool invocations
-mailbox: $(OBJS) $(USER_OBJS) /home/student/Desktop/workspace-MRT2-ART2/diagramm/Debug/diagramm
+mailbox: $(OBJS) $(USER_OBJS) /home/mrt/Desktop/Workspace_Echtzeitsimulation/diagramm/Debug/diagramm
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++  -o"mailbox" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++  -o "mailbox" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) mailbox
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) mailbox
 	-@echo ' '
 
 .PHONY: all clean dependents
 .SECONDARY:
-/home/student/Desktop/workspace-MRT2-ART2/diagramm/Debug/diagramm:
+/home/mrt/Desktop/Workspace_Echtzeitsimulation/diagramm/Debug/diagramm:
 
 -include ../makefile.targets
